@@ -47,6 +47,14 @@ class Validator {
   public hasEspecialChar(value:string) {
     return this.string.hasEspecialChar(value);
   }
+  
+  /**
+   * @param value A string to be verified if it's a valid email
+   * @returns True if the string is a valid email
+   */
+  public isEmail(value:string) {
+    return this.string.isEmail(value);
+  }
 
   /**
     * @param value A string that will be validated if it has just numbers
