@@ -1,16 +1,20 @@
+"use strict";
+
 const NumberValidator = require('./src/numberValidator');
 const StringValidator = require('./src/stringValidator');
 
 class Validator {
+   
+  constructor() {
+    this.number = new NumberValidator();
+    this.string = new StringValidator();
+  }
 
-  private readonly number = new NumberValidator();
-  private readonly string = new StringValidator();
- 
   /**
     * @param value string or number to validate
-    * @returns true if the value is empty 
+    * @returns true if the value is empty
   */
-  public isEmpty(value:string|number) {
+  isEmpty(value) {
     return this.string.isEmpty(value);
   }
 
@@ -19,7 +23,7 @@ class Validator {
     * @param maxLength Max length allowed
     * @returns True if the value has length greater than the max allowed
   */
-  public isGreaterThanMaxLength(value:string, maxLength:number) {
+  isGreaterThanMaxLength(value, maxLength) {
     return this.string.isGreaterThanMaxLength(value, maxLength);
   }
 
@@ -28,23 +32,23 @@ class Validator {
     * @param minLength Min length allowed
     * @returns True if the value has length shorter than allowed
   */
-  public isShorterThanMinLength(value:string, minLength:number) {
+  isShorterThanMinLength(value, minLength) {
     return this.string.isShorterThanMinLength(value, minLength);
   }
 
   /**
-    * @param date A string of a date that will be validated in format dd/mm/yy 
+    * @param date A string of a date that will be validated in format dd/mm/yy
     * @returns True if the date is write as dd/mm/yy, dd-mm-yy, or dd.mm.yy
   */
-  public isDate(date:string) {
+  isDate(date) {
     return this.string.isDate(date);
   }
-
+  
   /**
     * @param value A string to verify if has special char
     * @returns True it if has special char
   */
-  public hasEspecialChar(value:string) {
+  hasEspecialChar(value) {
     return this.string.hasEspecialChar(value);
   }
   
@@ -52,43 +56,43 @@ class Validator {
    * @param value A string to be verified if it's a valid email
    * @returns True if the string is a valid email
    */
-  public isEmail(value:string) {
+  isEmail(value) {
     return this.string.isEmail(value);
   }
-
+  
   /**
     * @param value A string that will be validated if it has just numbers
     * @returns True it if is a number
   */
-  public isNumber(value:string) {
+  isNumber(value) {
     return this.string.isNumber(value);
   }
-
+  
   /**
     * @param value A number that will be validated if it is a integer
     * @returns True if the value is a integer
   */
-  public isInt(value:number) {
+  isInt(value) {
     return this.number.isInt(value);
   }
-
-  /** 
+  
+  /**
     * @param value Number to be compared
     * @param numberToCompare Number to compare
     * @returns True if the value is greater than the number to compare
   */
-  public isGreater(value:number, numberToCompare:number) {
+  isGreater(value, numberToCompare) {
     return this.number.isGreater(value, numberToCompare);
   }
-
-  /** 
+  
+  /**
     * @param value Number to be compared
     * @param numberToCompare Number to compare
     * @returns True if the value is shorter than the number to compare
   */
-  public isShorter(value:number, numberToCompare:number) {
+  isShorter(value, numberToCompare) {
     return this.number.isShorter(value, numberToCompare);
   }
 }
 
-export default Validator;
+module.exports = Validator;
