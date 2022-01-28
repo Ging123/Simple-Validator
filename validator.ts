@@ -1,5 +1,5 @@
-import NumberValidator from './src/numberValidator';
-import StringValidator from './src/stringValidator';
+const NumberValidator = require('./src/numberValidator');
+const StringValidator = require('./src/stringValidator');
 
 class Validator {
 

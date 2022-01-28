@@ -59,4 +59,4 @@ class StringValidator {
   }
 }
 
-export default StringValidator;
+module.exports = StringValidator;

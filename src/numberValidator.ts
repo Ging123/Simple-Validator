@@ -13,4 +13,4 @@ class NumberValidator {
   }
 }
 
-export default NumberValidator;
+module.exports = NumberValidator;
