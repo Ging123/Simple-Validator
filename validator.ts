@@ -45,8 +45,8 @@ class Validator {
     * @param value A string to verify if has special char
     * @returns True it if has special char
   */
-  public hasEspecialChar(value:string) {
-    return this.string.hasEspecialChar(value);
+  public hasNoEspecialChar(value:string) {
+    return this.string.hasNoEspecialChar(value);
   }
   
   /**

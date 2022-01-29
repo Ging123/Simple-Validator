@@ -35,7 +35,7 @@ class StringValidator {
     return response;
   }
     
-  hasEspecialChar(value) {
+  hasNoEspecialChar(value) {
     if (!value) return false;
     const reg = /^[0-9a-zA-Z \b]+$/;
     const response = reg.test(value);
